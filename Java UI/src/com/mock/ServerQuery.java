@@ -30,7 +30,7 @@ public class ServerQuery {
         String[][] searchData = new String[0][];
         for(String[] ticket:data) {
             for(String attribute:ticket) {
-                if(attribute.equals(query)) {
+                if(attribute.contains(query)) {
                     searchData = appendRow(searchData, ticket);
                 }
             }

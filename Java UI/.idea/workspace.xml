@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc185625-2873-4aad-a118-f13164d76478" name="Default Changelist" comment="" />
+    <list default="true" id="bc185625-2873-4aad-a118-f13164d76478" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/mock/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java UI/META-INF/Java UI.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java UI/com/mock/ServerQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java UI/com/mock/ServerQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gui/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gui/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mock/ServerQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mock/ServerQuery.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +22,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1RX9bE69A8DahHOXmtuoN7iu1PO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="282" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -78,5 +90,18 @@
       <updated>1569802642092</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
