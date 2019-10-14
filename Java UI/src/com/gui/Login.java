@@ -10,6 +10,7 @@ public class Login extends JFrame{
     private JTextField userEdit;
     private JTextField passwordEdit;
     private JButton loginButton;
+    private JLabel errorMsg;
 
     public Login() {
         add(mainPanel);
@@ -18,13 +19,21 @@ public class Login extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        getRootPane().setDefaultButton(loginButton);
+        errorMsg.setVisible(false);
 
         loginButton.addActionListener(actionEvent -> {
-            int Authenticate = Authentication.login(userEdit.getText(), passwordEdit.getText());
-            //og
-            if(Authenticate != -1){
-                new MainWindow().setVisible(true);
-                dispose();//end of og
+            String userName = userEdit.getText();
+            String password = passwordEdit.getText();
+            if(!userName.isEmpty() && !password.isEmpty()) {
+                int Authenticate = Authentication.login(userName, password);
+                //og
+                if (Authenticate != -1) {
+                    new MainWindow().setVisible(true);
+                    dispose();//end of og
+                } else {
+                    errorMsg.setVisible(true);
+                }
             }
         });
     }
