@@ -1,15 +1,30 @@
 package com.mock;
 
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Authentication{
+
+    static private final String base = "https://tinevra.herokuapp.com/users/";
 
     static private String[][] users = {
             {"george",  "juan",         "maynez", "miguel", "sammy", "daniel", "paulina","kenneth"},
             {"georgie", "juantwothree", "minus",  "migg",   "Tinev", "villa2", "Pau",    "kennY"},
             {"0",       "1",            "2",      "3",      "0",     "1",      "2",      "3"}};
 
-    static public int login(String user, String password){
+    static public int login(String user, String password) {
+        try {
+            connectToServer(user, password);
+        } catch (IOException e) {
+            System.out.println(e);
+        }
 
         for(int i = 0; i < users[0].length; i++){
 
@@ -18,17 +33,17 @@ public class Authentication{
         return -1;
     }
 
-    /*
-    public static void main(String[] args){
+    private static void connectToServer(String username, String password) throws IOException {
+        String parameters = username + "/" + password;
+        String userURL = base + parameters;
+        System.out.println(userURL);
+        URL url = new URL(userURL);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
 
-        for(int i = 0; i < users[0].length; i++){System.out.println(users[0][i]);}
-        System.out.println("Enter username");
-        Scanner scnr = new Scanner(System.in);
-        String user = scnr.nextLine();
-        System.out.println("Enter password");
-        String pw = scnr.nextLine();
-        System.out.println(login(user, pw));
-
+        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String inputLine = in.readLine();
+        in.close();
+        System.out.println(inputLine);
     }
-    */
 }
