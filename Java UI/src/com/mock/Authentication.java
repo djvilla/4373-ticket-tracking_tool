@@ -21,20 +21,22 @@ public class Authentication{
 
     static public int login(String user, String password) {
         try {
-            connectToServer(user, password);
+            return connectToServer(user, password);
         } catch (IOException e) {
             System.out.println(e);
         }
-
+        /*
         for(int i = 0; i < users[0].length; i++){
 
             if(users[0][i].equals(user.toLowerCase())){return Integer.parseInt(users[2][i]);}
         }
+         */
         return -1;
     }
 
-    private static void connectToServer(String username, String password) throws IOException {
-        String parameters = username + "/" + password;
+    private static int connectToServer(String username, String password) throws IOException {
+        String parameters = username + "/" + password + "/accesslvl";
+        String test = ":username/:password/accesslvl";
         String userURL = base + parameters;
         System.out.println(userURL);
         URL url = new URL(userURL);
@@ -42,8 +44,12 @@ public class Authentication{
         connection.setRequestMethod("GET");
 
         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String inputLine = in.readLine();
+        String accesslevel = in.readLine();
         in.close();
-        System.out.println(inputLine);
+        System.out.println(accesslevel);
+        if(accesslevel.equals("{}")) {
+            return -1;
+        }
+        return Integer.parseInt(accesslevel);
     }
 }
