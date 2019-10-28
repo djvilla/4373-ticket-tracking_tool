@@ -10,7 +10,6 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 public class MainWindow extends JFrame {
-
     private JTextField searchTextField;
     private JTable ticketTable;
     private JCheckBox a1CheckBox;
@@ -101,6 +100,198 @@ public class MainWindow extends JFrame {
             String query = searchTextField.getText();
             if(!query.isEmpty()) {
                 String[][] searchData = serverQuery.getSearchResults(query);
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        routineCheckBox.addActionListener(actionEvent -> {
+            AbstractButton routineButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = routineButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getSeveritySearchResults("Routine");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        urgentCheckBox.addActionListener(actionEvent -> {
+            AbstractButton urgentButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = urgentButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getSeveritySearchResults("Urgent");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        criticalCheckBox.addActionListener(actionEvent -> {
+            AbstractButton criticalButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = criticalButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getSeveritySearchResults("Critical");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        newCheckBox.addActionListener(actionEvent -> {
+            AbstractButton newButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = newButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getSearchResults("New");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        openCheckBox.addActionListener(actionEvent -> {
+            AbstractButton openButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = openButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getSearchResults("Open");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        closedCheckBox.addActionListener(actionEvent -> {
+            AbstractButton closedButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = closedButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getSearchResults("Closed");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        a1CheckBox.addActionListener(actionEvent -> {
+            AbstractButton priorityButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = priorityButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getPrioritySearchResults("1");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        a2CheckBox.addActionListener(actionEvent -> {
+            AbstractButton priorityButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = priorityButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getPrioritySearchResults("2");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        a3CheckBox.addActionListener(actionEvent -> {
+            AbstractButton priorityButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = priorityButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getPrioritySearchResults("3");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        a4CheckBox.addActionListener(actionEvent -> {
+            AbstractButton priorityButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = priorityButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getPrioritySearchResults("4");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        a5CheckBox.addActionListener(actionEvent -> {
+            AbstractButton priorityButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = priorityButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getPrioritySearchResults("5");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        a6CheckBox.addActionListener(actionEvent -> {
+            AbstractButton priorityButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = priorityButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getPrioritySearchResults("6");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        a7CheckBox.addActionListener(actionEvent -> {
+            AbstractButton priorityButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = priorityButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getPrioritySearchResults("7");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        a8CheckBox.addActionListener(actionEvent -> {
+            AbstractButton priorityButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = priorityButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getPrioritySearchResults("8");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        a9CheckBox.addActionListener(actionEvent -> {
+            AbstractButton priorityButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = priorityButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getPrioritySearchResults("9");
+                showTable(searchData);
+            } else {
+                initTable();
+            }
+        });
+
+        a10CheckBox.addActionListener(actionEvent -> {
+            AbstractButton priorityButton = (AbstractButton) actionEvent.getSource();
+
+            boolean selected = priorityButton.getModel().isSelected();
+            if(selected) {
+                String[][] searchData = serverQuery.getPrioritySearchResults("10");
                 showTable(searchData);
             } else {
                 initTable();

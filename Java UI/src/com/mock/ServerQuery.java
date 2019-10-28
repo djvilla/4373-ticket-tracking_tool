@@ -1,5 +1,10 @@
 package com.mock;
 
+import com.gui.MainWindow;
+import com.sun.tools.javac.Main;
+
+import java.awt.*;
+
 /************************
  * Mocks query to a server
  */
@@ -33,6 +38,26 @@ public class ServerQuery {
                 if(attribute.contains(query)) {
                     searchData = appendRow(searchData, ticket);
                 }
+            }
+        }
+        return searchData;
+    }
+
+    public String[][] getPrioritySearchResults(String query) {
+        String[][] searchData = new String[0][];
+        for(String[] ticket:data) {
+            if(ticket[2].equals(query)) {
+                searchData = appendRow(searchData, ticket);
+            }
+        }
+        return searchData;
+    }
+
+    public String[][] getSeveritySearchResults(String query) {
+        String[][] searchData = new String[0][];
+        for (String[] ticket : data) {
+            if (ticket[3].equals(query)) {
+                searchData = appendRow(searchData, ticket);
             }
         }
         return searchData;
